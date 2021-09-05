@@ -1,0 +1,315 @@
+/*{{{{{{{{{{{{{{{{{{{{{{{{{{{{{BODY}}}}}}}}}}}}}}}}}}}}}}}}}}}}}*/
+body {
+  background-image: url("../media/background-liquid-metal.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 0%;
+  margin: 0%;
+}
+
+/*{{{{{{{{{{{{{{{{{{{{{{{{THREE.JS CANVAS}}}}}}}}}}}}}}}}}}}}}}}}*/
+#canvas {
+  margin: auto;
+  display: block;
+  padding-top: 30px;
+  height: 350px;
+  width: 100%; 
+  max-width: 600px; 
+
+  /* prevent txt selection */
+  -webkit-user-select: none; 
+  -moz-user-select: none;   
+  -ms-user-select: none; 
+  user-select: none;
+
+  /* for debugging...
+  background-color: lightpink;
+  */
+}
+
+/*{{{{{{{{{{{{{{{{{{{{{{{{CARD CONTAINER}}}}}}}}}}}}}}}}}}}}}}}}*/
+.cardContainer {
+  width: 100%; /* dynamically adjust width to any device's screen */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 50px;
+  padding-bottom: 20px;
+  margin: auto;
+  perspective: 1000px;
+
+  /* for debugging...
+  background-color: black;
+  */
+}
+
+/*{{{{{{{{{{{{{{{{{{{{{{{CARD PIC + TEXT}}}}}}}}}}}}}}}}}}}}}}}*/
+.card {
+  transform-style: preserve-3d;
+  transition: height 0.5s;
+  -moz-transition: height 0.5s;
+  -webkit-transition: height 0.5s;
+
+  width: 35rem;
+  border-radius: 20px;
+  padding: 1rem;
+  
+  font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  overflow: hidden;
+  color: #000;
+
+  text-align: justify;
+  margin-right: 10px;
+  margin-left: 10px;
+  font-size: 11px;
+
+  /* adjust font for mobile */
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+
+  /* prevent txt selection */
+  -webkit-user-select: none; 
+  -moz-user-select: none;   
+  -ms-user-select: none; 
+  user-select: none;
+
+  /*for debugging...
+  background-color: lightpink;
+  */
+}
+
+/*{{{{{{{{{{{{{{{{{{{{{PROFILE PIC for CARD}}}}}}}}}}}}}}}}}}}}}*/
+#profilePic {
+  max-height: 180px;
+  margin-right: 10px;
+  border-radius: 10px;
+  float: left;
+}
+
+/*{{{{{{{{{{{{{{{{{{{{{{{{HEADING TEXT}}}}}}}}}}}}}}}}}}}}}}}}*/
+/* who am i? + projects */
+.heading-text {
+  font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  text-align: center; 
+  color: #000; 
+
+  width: 170px;
+  font-size: 30px;
+  margin: auto;
+
+  transition: all .2s ease-in-out;
+
+  /*adjust font for mobile*/
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+
+  /*prevent txt selection*/
+  -webkit-user-select: none; 
+  -moz-user-select: none;   
+  -ms-user-select: none; 
+  user-select: none;
+
+  /*for debugging...
+  background-color: lightpink;
+  */
+}
+
+/*{{{{{{{{{{{{{{{{{{{{HEADING HOVER EFFECT}}}}}}}}}}}}}}}}}}}}*/
+/* Who am I? + Projects */
+.heading-text:hover {
+  transform: scale(1.1);
+  transition: all .2s ease-in-out;
+}
+
+/*{{{{{{{{{{{{{{{{{{{{{{{{PROJECT ROWS}}}}}}}}}}}}}}}}}}}}}}}}*/
+.proContainer {
+  position:relative;
+  display: flex;
+  justify-content: center;
+  perspective: 600px;
+
+  /*adjust font for mobile*/
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+
+  /*prevent txt selection*/
+  -webkit-user-select: none; 
+  -moz-user-select: none;   
+  -ms-user-select: none; 
+  user-select: none;
+  
+  /* for debugging...
+  background-color: lightpink;
+  */
+}
+
+/*{{{{{{{{{{{{{{{{{{{{{{PROJECT GIF BANNERS}}}}}}}}}}}}}}}}}}}}}}*/
+.projectBanners {
+  max-width: 100%; 
+  border-radius: 10px;
+}
+
+/*{{{{{{{{{{{{{{{{{{{{{PROJECT DESCRIPTIONS}}}}}}}}}}}}}}}}}}}}}*/
+.proDesc {
+  font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  margin-right: 10px;
+  margin-left: 10px;
+  font-size: 9px;
+  color: black;
+  z-index: 1000;
+}
+
+/*{{{{{{{{{{{{{{{{{{{{{{{{{UNORDERED LISTS}}}}}}}}}}}}}}}}}}}}}}}}}*/
+ul li {
+  list-style-type: circle;
+  font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  margin-right: 10px;
+  margin-left: 0px;
+  font-size: 9px;
+  color: black;
+}
+
+/*{{{{{{{{{{{{{{{{{{PROJECT CARDS INSIDE ROWS}}}}}}}}}}}}}}}}}}*/
+.project {
+  cursor: pointer;
+  overflow: hidden;
+  position:relative;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 3px 3px 12px rgb(146, 146, 146);
+
+  width: 270px;
+  max-height: 67px;
+
+  background-size: cover;
+  background-position: center;
+
+  transition: all 0.72s;
+  perspective:500px;
+}
+
+/*{{{{{{{{{{CUSTOMISING PROJECTS IN A ROW BEFORE HOVER}}}}}}}}}}*/
+.a {
+  z-index: 999;
+  transform: rotateX(30deg); /* tilt back a lil like star wars title screen thingy */
+  z-index: 0;
+  margin: 10px;
+}
+.b {
+  z-index: 999;
+  transform: rotateX(30deg); /* tilt back a lil */
+  z-index: 0;
+  margin: 1px; /* makes the middle projects float up more */
+}
+.c {
+  z-index: 999;
+  transform: rotateX(30deg); /* tilt back a lil */
+  z-index: 0;
+  margin: 10px;
+}
+
+/*{{{{{{{{{{{{CUSTOMISING PROJECTS IN A ROW ON HOVER}}}}}}}}}}}}*/
+.a:hover {
+  transform: translateX(30%) translateZ(100px) rotateY(10deg);
+  z-index: 999; /* keep focused project in front of the rest */
+  transition: all 1s ease-in-out;
+  max-height: 200px; /* prevents super long cards on hover */
+  margin-bottom: 40px;
+  overflow-y: scroll; /* allows scroll if device is mobile/portrait */
+}
+.b:hover {
+  transform: translateZ(100px);
+  z-index: 999; /* keep focused project in front of the rest */
+  transition: all 1s ease-in-out;
+  max-height: 200px; /* prevents super long cards on hover */
+  margin-bottom: 40px;
+  overflow-y: scroll; /* allows scroll if device is mobile/portrait */
+}
+.c:hover {
+  transform: translateX(-30%) translateZ(100px) rotateY(-10deg);
+  z-index: 999; /* keep focused project in front of the rest */
+  transition: all 1s ease-in-out;
+  max-height: 200px; /* prevents super long cards on hover */
+  margin-bottom: 40px;
+  overflow-y: scroll; /* allows scroll if device is mobile/portrait */
+}
+
+/*{{{{{{{{{{{{{{{{{{{{{{{{SOCIALS ICONS}}}}}}}}}}}}}}}}}}}}}}}}*/
+.socialsIcons {
+  height: 25px;
+  align-items: center;
+  display: inline ;
+  margin-left: auto;
+  margin-right: auto;
+  transition: all .2s ease-in-out;
+  border-radius: 15%; /* rounded corners on icons */
+}
+
+/*{{{{{{{{{{{{{{{{{{{SOCIALS ICONS ON HOVER}}}}}}}}}}}}}}}}}}}*/
+.socialsIcons:hover {
+  transition: all .2s ease-in-out;
+  transform: scale(1.3);
+}
+
+/*{{{{{{{{{{{{{{{{{{{{{{{STICKY FOOTER}}}}}}}}}}}}}}}}}}}}}}}*/
+/* the one that moves up and down */
+#socials {
+  width: 100%;
+  text-align: center;
+  padding-bottom: 10px;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  bottom: 0;
+
+  /* adjust font for mobile */
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+
+  /* prevent txt selection */
+  -webkit-user-select: none; 
+  -moz-user-select: none;   
+  -ms-user-select: none; 
+  user-select: none;
+}
+
+/*{{{{{{{{{{{{{{{{{{{{{{{{{{FOOTER}}}}}}}}}}}}}}}}}}}}}}}}}}*/
+#footer {
+  background-color: #000;
+  color: white;
+  height: 100%;
+  width: 100%;
+  bottom: 0;
+
+  /* adjust font for mobile */
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+
+  /* prevent txt selection */
+  -webkit-user-select: none; 
+  -moz-user-select: none;   
+  -ms-user-select: none; 
+  user-select: none;
+}
+
+/*{{{{{{{{{{{{{{{{ALL TXT LINKS BEFORE VISIT}}}}}}}}}}}}}}}}*/
+a:link {
+  color: lightblue;
+}
+
+/*{{{{{{{{{{{{{{{{{ALL TXT LINKS AFTER VISIT}}}}}}}}}}}}}}}}}*/
+a:visited {
+  color: lightpink;
+}
+
+/*{{{{{{{{{{{{METHOD TO ADD BLANK BREAKS IN PAGE}}}}}}}}}}}}*/
+/* gap between three.js canvis & 'who am i?' card for sticky */
+.self_clear {
+  height:80px; 
+  width:100%; 
+  clear:both;
+}
